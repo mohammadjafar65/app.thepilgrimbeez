@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Web site created using create-react-app" />
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <title>The Pilgrim Beez</title>
+
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/animate.min.css" />
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/font-awesome.css" />
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/boxicons.min.css" />
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/magnific-popup.min.css" />
+        <!-- <link rel="stylesheet" href="%PUBLIC_URL%/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/owl.theme.default.min.css"> -->
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/style.css" />
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/responsive.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="%PUBLIC_URL%/js/jquery.min.js"></script>
+        <script src="%PUBLIC_URL%/js/popper.min.js"></script>
+        <script src="%PUBLIC_URL%/js/bootstrap.min.js"></script>
+        <script src="%PUBLIC_URL%/js/wow.min.js"></script>
+        <!-- <script src="%PUBLIC_URL%/js/owl.carousel.min.js"></script> -->
+        <script src="%PUBLIC_URL%/js/custom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+        <script>
+            $(document).on("click", '[data-toggle="lightbox"]', function (event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+        </script>
+        <script>
+            const checkbox = document.getElementById("checkbox");
+            const targetDiv = document.getElementById("mega_menu");
+
+            checkbox.addEventListener("change", function () {
+                if (this.checked) {
+                    targetDiv.classList.add("newClass");
+                    targetDiv.style.height = "220px";
+                } else {
+                    targetDiv.classList.remove("newClass");
+                    targetDiv.style.height = "0px";
+                }
+            });
+
+            window.addEventListener("scroll", function () {
+                targetDiv.style.height = "0px";
+                checkbox.checked = false;
+            });
+        </script>
+    </body>
+</html>
