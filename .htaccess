@@ -13,17 +13,10 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ /frontend/build/$1 [L]
 
-    # Rewrite rule for the frontend project
-    RewriteCond %{HTTP_HOST} ^www\.thepilgrimbeez\.com$
-    RewriteCond %{REQUEST_URI} !^/frontend/build/
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /frontend/build/$1 [L]
-
     # Rewrite rule for the admin project
     RewriteCond %{HTTP_HOST} ^admin\.thepilgrimbeez\.com$
-    RewriteCond %{REQUEST_URI} !^/tpb-admin/
+    RewriteCond %{REQUEST_URI} !^/tpb-admin/build/
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /tpb-admin/$1 [L]
+    RewriteRule ^(.*)$ /tpb-admin/build/$1 [L]
 </IfModule>
