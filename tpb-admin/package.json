@@ -1,7 +1,7 @@
 {
   "name": "tpb-admin",
-  "homepage": "https://github.com/mohammadjafar65/tpb-admin#readme",
-  "version": "0.1.0",
+  "homepage": "https://admin.thepilgrimbeez.com/",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
