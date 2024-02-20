@@ -8,7 +8,7 @@ class AddnewPackage extends React.Component {
         const data = new FormData(event.target);
     
         // Correct endpoint
-        const endpoint = 'https://www.thepilgrimbeez.com/create';
+        const endpoint = 'https://thepilgrimbeez.com/create';
     
         axios.post(endpoint, data, {
             headers: {

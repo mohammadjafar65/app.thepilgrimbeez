@@ -1,5 +1,6 @@
 {
   "name": "tpb-admin",
+  "homepage": "https://admin.thepilgrimbeez.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
