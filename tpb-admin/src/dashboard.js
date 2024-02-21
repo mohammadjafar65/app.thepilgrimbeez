@@ -52,7 +52,7 @@ function Dashboard() {
         });
 
         // Correct endpoint
-        const endpoint = "https://admin.thepilgrimbeez.com/create";
+        const endpoint = "https://thepilgrimbeez.com/create";
 
         axios
             .post(endpoint, data, {
