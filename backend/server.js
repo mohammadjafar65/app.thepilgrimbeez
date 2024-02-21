@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 require('dotenv').config();
 
 // Define the port
-const port = process.env.PORT || 3301;
+const port = process.env.PORT || 3302;
 
 // Database connection
 const db = mysql.createConnection({
