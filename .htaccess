@@ -1,25 +1,34 @@
-# <IfModule mod_rewrite.c>
-#     # Enable Rewrite Engine
-#     RewriteEngine On
-
-#     # Redirect requests to HTTPS
-#     RewriteCond %{HTTPS} on
-#     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-#     # Rewrite rule for the frontend project
-#     RewriteCond %{HTTP_HOST} ^thepilgrimbeez\.com$
-#     RewriteCond %{REQUEST_URI} !^/frontend/build/
-#     RewriteCond %{REQUEST_FILENAME} !-f
-#     RewriteCond %{REQUEST_FILENAME} !-d
-#     RewriteRule ^(.*)$ /frontend/build/$1 [L]
-# </IfModule>
 <IfModule mod_rewrite.c>
-RewriteEngine On
-# If an existing asset or directory is requested go to it as it is
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
-RewriteRule ^ - [L]
+    # Enable Rewrite Engine
+    RewriteEngine On
 
-# If the requested resource doesn't exist, use index.html
-RewriteRule ^ frontend/build/
+    # Redirect requests to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Rewrite rule for the frontend project
+    RewriteCond %{HTTP_HOST} ^thepilgrimbeez\.com$
+    RewriteCond %{REQUEST_URI} !^/frontend/build/
+    RewriteCond %{DOCUMENT_ROOT}/frontend/build%{REQUEST_URI} -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}/frontend/build%{REQUEST_URI} -d
+    RewriteRule ^(.*)$ /frontend/build/$1 [L]
+
+    # If the request is for a file or directory that exists, serve it directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # If the requested resource does not exist, send it to index.html
+    RewriteRule ^ /frontend/build/index.html [L]
 </IfModule>
+
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# # If an existing asset or directory is requested go to it as it is
+# RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+# RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+# RewriteRule ^ - [L]
+
+# # If the requested resource doesn't exist, use index.html
+# RewriteRule ^ frontend/build/
+# </IfModule>
