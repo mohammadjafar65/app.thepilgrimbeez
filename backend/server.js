@@ -13,7 +13,7 @@ app.use(cors());
 require('dotenv').config();
 
 // Define the port
-const port = process.env.PORT || 3009;
+const port = process.env.PORT || 3306;
 
 // Database connection
 const db = mysql.createConnection({
