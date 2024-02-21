@@ -50,6 +50,9 @@ if (!fs.existsSync(uploadDir)) {
 }
 
 // Serve static files from the uploads directory
+app.get("/checkme", function (req, res) {
+  res.send("Hello World! Backend");
+});
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static(path.join(__dirname, "public")));
 
