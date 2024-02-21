@@ -1,18 +1,18 @@
-<IfModule mod_rewrite.c>
-    # Enable Rewrite Engine
-    RewriteEngine On
+# <IfModule mod_rewrite.c>
+#     # Enable Rewrite Engine
+#     RewriteEngine On
 
-    # Redirect requests to HTTPS
-    RewriteCond %{HTTPS} on
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#     # Redirect requests to HTTPS
+#     RewriteCond %{HTTPS} on
+#     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # Rewrite rule for the frontend project
-    RewriteCond %{HTTP_HOST} ^thepilgrimbeez\.com$
-    RewriteCond %{REQUEST_URI} !^/frontend/build/
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /frontend/build/$1 [L]
-</IfModule>
+#     # Rewrite rule for the frontend project
+#     RewriteCond %{HTTP_HOST} ^thepilgrimbeez\.com$
+#     RewriteCond %{REQUEST_URI} !^/frontend/build/
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule ^(.*)$ /frontend/build/$1 [L]
+# </IfModule>
 # <IfModule mod_rewrite.c>
 # RewriteEngine On
 # # If an existing asset or directory is requested go to it as it is
