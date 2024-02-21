@@ -57,16 +57,14 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
-// Serve static files from both frontend and admin directories
-app.use(express.static("frontend"));
-app.use(express.static("admin"));
+// Serve static files from the uploads directory
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static(path.join(__dirname, "public")));
 
 // Routes for travel packages
 require('./travelPackages')(app, db, upload, uuidv4);
 
-// Routes for users
+// Routes for student
 require('./users')(app, db);
 
 // Start the server
