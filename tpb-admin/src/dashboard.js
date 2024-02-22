@@ -11,7 +11,7 @@ function Dashboard() {
         const fetchPackages = async () => {
             try {
                 // Make sure the REACT_APP_API_URL is set in your .env file and points to your server's domain
-                const response = await axios.get(`https://thepilgrimbeez.com/packages`);
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/packages`);
                 setPackages(response.data);
             } catch (err) {
                 setError("An error occurred while fetching the packages.");
@@ -27,7 +27,7 @@ function Dashboard() {
         const confirmDelete = window.confirm("Are you sure you want to delete this package?");
         if (confirmDelete) {
             axios
-                .delete(`https://thepilgrimbeez.com/packages/id/${packageId}`)
+                .delete(`${process.env.REACT_APP_API_URL}/packages/id/${packageId}`)
                 .then((response) => {
                     // Log the response for debugging
                     console.log("Delete response:", response);

@@ -11,7 +11,7 @@ const CategoryPackages = () => {
   console.log('Category:', category);
 
   useEffect(() => {
-    axios.get(`https://thepilgrimbeez.com/${encodeURIComponent(category)}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/${encodeURIComponent(category)}`)
        .then(response => {
         console.log('Packages data:', response.data); // Add this line
         setPackages(response.data);

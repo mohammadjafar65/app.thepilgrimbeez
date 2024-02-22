@@ -11,7 +11,7 @@ const PackageDetail = () => {
     useEffect(() => {
         if (id) {
             axios
-                .get(`https://thepilgrimbeez.com/packages/id/${id}`)
+                .get(`${process.env.REACT_APP_API_URL}/packages/id/${id}`)
                 .then((response) => {
                     console.log(response); // Log the full response for debugging
                     if (response.data) {

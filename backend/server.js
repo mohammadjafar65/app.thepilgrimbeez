@@ -8,7 +8,9 @@ const { v4: uuidv4 } = require("uuid");
 
 const app = express(); // Initialize Express app
 
-app.use(cors()); // Enable CORS middleware
+app.use(cors({
+  origin: "https://admin.thepilgrimbeez.com/",
+}));
 
 require('dotenv').config();
 
