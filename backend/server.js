@@ -10,6 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: 'https://admin.thepilgrimbeez.com', // Allow requests from this origin
+  origin: 'https://thepilgrimbeez.com',
 }));
 
 // Middleware to set CORS headers
