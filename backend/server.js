@@ -1,3 +1,7 @@
+header('Access-Control-Allow-Origin', '*');
+header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Auth-Token');
+
 const express = require('express');
 const cors = require('cors');
 const multer = require("multer");
@@ -8,12 +12,12 @@ const { v4: uuidv4 } = require("uuid");
 
 const app = express();
 // Enable CORS middleware
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://admin.thepilgrimbeez.com'); // Replace this with your actual domain
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Auth-Token');
+//   next();
+// });
 
 require('dotenv').config();
 
