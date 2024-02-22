@@ -1,20 +1,14 @@
 const express = require('express');
-const cors = require('cors');
+const cors = require('cors'); // Import the cors module
 const multer = require("multer");
 const fs = require("fs");
 const mysql = require("mysql");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 
-const app = express();
-app.use(cors());
-// Enable CORS middleware
-app.use((req, res, cors) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Auth-Token');
-  cors();
-});
+const app = express(); // Initialize Express app
+
+app.use(cors()); // Enable CORS middleware
 
 require('dotenv').config();
 
