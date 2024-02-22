@@ -4,10 +4,10 @@
 
     # Redirect requests to HTTPS
     RewriteCond %{HTTPS} on
-    RewriteRule ^ https://%{HTTPS_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # Rewrite rule for the frontend project
-    RewriteCond %{HTTPS_HOST} ^thepilgrimbeez\.com$
+    RewriteCond %{HTTP_HOST} ^thepilgrimbeez\.com$
     RewriteCond %{REQUEST_URI} !^/frontend/build/
     RewriteCond %{DOCUMENT_ROOT}/frontend/build%{REQUEST_URI} -f [OR]
     RewriteCond %{DOCUMENT_ROOT}/frontend/build%{REQUEST_URI} -d
