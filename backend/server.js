@@ -1,7 +1,3 @@
-header('Access-Control-Allow-Origin', '*');
-header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Auth-Token');
-
 const express = require('express');
 const cors = require('cors');
 const multer = require("multer");
@@ -11,13 +7,14 @@ const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 
 const app = express();
+app.use(cors());
 // Enable CORS middleware
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Auth-Token');
-//   next();
-// });
+app.use((req, res, cors) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Auth-Token');
+  cors();
+});
 
 require('dotenv').config();
 
