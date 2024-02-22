@@ -116,7 +116,7 @@ function Dashboard() {
                 <div className="wrapper">
                     <div className="main-header">
                         <div className="logo-header">
-                            <h6>TPM Admin</h6>
+                            <h6>TPB Admin</h6>
                             <button className="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>

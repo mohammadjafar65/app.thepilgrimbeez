@@ -7,16 +7,11 @@ const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 
 const app = express();
-app.use(express.json());
-app.use(cors({
-  origin: 'https://admin.thepilgrimbeez.com', // Allow requests from this origin
-  origin: 'https://thepilgrimbeez.com',
-}));
-
-// Middleware to set CORS headers
+// Enable CORS middleware
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Origin', 'https://admin.thepilgrimbeez.com'); // Replace this with your actual domain
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
 
