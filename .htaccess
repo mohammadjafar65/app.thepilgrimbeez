@@ -3,7 +3,7 @@
     RewriteEngine On
 
     # Redirect requests to HTTPS
-    RewriteCond %{HTTPS} on
+    RewriteCond %{HTTPS} off
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # Rewrite rule for the frontend project
@@ -19,7 +19,7 @@
     RewriteRule ^ - [L]
 
     # If the requested resource does not exist, send it to index.html
-    RewriteRule ^ /frontend/build/index.html [L]
+    # RewriteRule ^ /frontend/build/index.html [L]
 </IfModule>
 
 # <IfModule mod_rewrite.c>
