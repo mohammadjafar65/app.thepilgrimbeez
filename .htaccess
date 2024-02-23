@@ -19,7 +19,7 @@
     RewriteRule ^ - [L]
 
     # If the requested resource does not exist, send it to index.html
-    # RewriteRule ^ /frontend/build/index.html [L]
+    RewriteRule ^ /frontend/build/index.html [L]
 </IfModule>
 
 # <IfModule mod_rewrite.c>
