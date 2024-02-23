@@ -7,7 +7,7 @@ const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: 'https://admin.thepilgrimbeez.com' }));
 app.use(express.json()); // Add this line to parse JSON requests
 
 require('dotenv').config();
